@@ -30,7 +30,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onErrorCaptured, defineProps, watchEffect } from "vue";
+import { ref, onErrorCaptured, defineProps } from "vue";
 
 // Props (optional callback)
 const props = defineProps<{

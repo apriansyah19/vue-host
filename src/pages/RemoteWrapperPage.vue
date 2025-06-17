@@ -19,10 +19,8 @@
 </template>
 
 <script setup lang="ts">
-import { defineAsyncComponent, onBeforeMount } from "vue";
+import { defineAsyncComponent } from "vue";
 import ErrorBoundary from "@/components/ErrorBoundary.vue";
-import { useRoute } from "vue-router";
-const route = useRoute();
 
 const props = withDefaults(
   defineProps<{
@@ -47,7 +45,7 @@ const AsyncRemoteLoader = defineAsyncComponent({
         throw new Error("Invalid path!");
     }
   },
-  onError(error, retry, fail) {
+  onError(error, fail) {
     console.error("Error loading remote component:", error);
     fail(); // Stop the loading process
   },

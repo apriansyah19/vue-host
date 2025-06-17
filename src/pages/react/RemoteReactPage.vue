@@ -7,7 +7,6 @@
 
 <script setup lang="ts">
 import { onMounted, onBeforeUnmount, defineProps } from "vue";
-import { useRoute } from "vue-router";
 import { remoteAppMap } from "@/mappings/remoteApp";
 
 const props = withDefaults(
@@ -21,8 +20,6 @@ const props = withDefaults(
 );
 
 let root: any = null; // for unmounting later (optional)
-
-const route = useRoute();
 
 onMounted(async () => {
   const loader = remoteAppMap[props.locationRemote];
